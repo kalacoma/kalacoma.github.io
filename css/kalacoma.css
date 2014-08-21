@@ -30,9 +30,7 @@ body {
 }
 @media (min-width: 481px) {
   body {
-    font-size: 1.125em; /* 18px */
-    font-size: 1.125rem;
-    line-height: 1.5em;
+    line-height: 1.3em;
     text-align: center;
   }
 }
@@ -419,6 +417,7 @@ header {
 footer {
   margin: 0 auto;
   padding-top: 36px;
+  font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
   
 /*------------------------------------*\
