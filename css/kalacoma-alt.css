@@ -16,7 +16,7 @@ html {
   color: #fff;
   -webkit-overflow-scrolling: touch;
 	-webkit-tap-highlight-color: #fff;
-	background: #27010e url(../images/herrera.jpg);
+	background: #000;
 	padding: 1em;
 }
 @media (min-width: 661px) {
@@ -146,9 +146,12 @@ h1,.h1{
   font-size: 2.626em;     /* 42px */
   font-size: 2.625rem;
   line-height: 1em;
-  font-family: "IM Fell DW Pica", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  margin: 0.5em 0 1em;
+  margin: 0.5em 0 68px;
+  text-indent: -9999em;
+  background: url(/logo.png) no-repeat scroll 0 0;
+  background-size: 450px 60px;
+  width: 450px;
 }
 @media (min-width: 481px) {
   h1,.h1{
@@ -163,15 +166,16 @@ h1,.h1{
   }
 }
 h2,.h2{
-  font-size: 2em;     /* 32px */
-  font-size: 2rem;
+  font-size: 2.375em;  /* 38px */
+  font-size: 2.375rem;
   line-height: 1.2em;
-  font-family: "IM Fell Great Primer", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
 }
 h3,.h3{
-  font-size: 1.625em; /* 36px */
-  font-size: 1.625rem;
-  line-height: 1.3em;
+  font-size: 2.375em; /* 38px */
+  font-size: 2.375rem;
+  line-height: 1.2em;
+  font-weight: bold;
 }
 h4,.h4{
   font-size: 1.25em;  /* 20px */
@@ -200,11 +204,12 @@ article > footer {
 }
 
 .hsmall {
-  font-size: 1em; /* 12px */
-  font-size: 1rem;
+  font-size: 1.5em;  /* 24px */
+  font-size: 1.5rem;
   line-height: 1.625em;
   text-transform: uppercase;
   margin-bottom: 0;
+  font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /*------------------------------------*\
     links
@@ -340,6 +345,15 @@ svg:not(:root) {
 /*------------------------------------*\
     layout
 \*------------------------------------*/
+
+video#bgvid {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background: url(background.png) no-repeat;
+  background-size: cover;
+}
+
 header {
   margin-bottom: 36px;
 }
@@ -360,7 +374,7 @@ header {
     }
 
 .featured {
-  margin: 0 auto 3em;
+  margin: 0 auto 58px;
 }
   .featured span {
     color: #27010e;
@@ -368,7 +382,7 @@ header {
   }
   
 .btn-wrapper {
-  margin-bottom: 3em;
+  margin-bottom: 48px;
 }
   .btn {
     padding: 10px;
@@ -410,18 +424,6 @@ header {
     line-height: 48px;
   }
 }
-  .reviews {
-    font-family: "IM Fell Great Primer", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 28px;
-    overflow: hidden;
-  }
-  @media (min-width: 481px) {
-    .reviews {
-      font-size: 26px;
-      line-height: 36px;
-    }
-  }
 
 footer {
   margin: 0 auto;
