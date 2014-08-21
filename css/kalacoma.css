@@ -11,7 +11,7 @@ pre {
   margin-bottom: 1em;
 }
 html {
-  font: 1em/1.2em "IM Fell DW Pica", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height:100%;
   color: #fff;
   -webkit-overflow-scrolling: touch;
@@ -211,6 +211,7 @@ article > footer {
   line-height: 1.625em;
   text-transform: uppercase;
   margin-bottom: 0;
+  font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /*------------------------------------*\
     links
@@ -393,13 +394,14 @@ header {
     display: inline-block;
     color:#fff;
     background: transparent;
+    font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-right: -4px;
   }
   @media (min-width: 481px) {
     .btn {
       min-width: 100px;
-      font-size: 1.3em;
-      font-size: 1.3rem;
+      font-size: 1.6em;
+      font-size: 1.6rem;
       line-height: 1.2em;
     }
   }
