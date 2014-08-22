@@ -1,54 +1,8 @@
 /**
- * Base elements
- */
-h1,h2,h3,h4,h5,h6,hgroup,
-ul,ol,dl,
-blockquote,p,address,
-table,
-fieldset,figure,
-pre {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-html {
-  font: 1em/1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
-  min-height:100%;
-  color: #fff;
-  -webkit-overflow-scrolling: touch;
-	-webkit-tap-highlight-color: #fff;
-	background: #000;
-	padding: 1em;
-}
-@media (min-width: 661px) {
-  html {
-    padding: 2em 2em 68px;
-  }
-}
-body {
-  margin: 0 auto;
-  max-width: 600px;
-}
-@media (min-width: 481px) {
-  body {
-    line-height: 1.3em;
-    text-align: center;
-  }
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/**
  * A more considered reset; more of a restart... 
  * As per: csswizardry.com/2011/10/reset-restarted
  */
-article,aside,details,figcaption,figure,footer,
-header,hgroup,main,menu,nav,section{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{
   display:block;
 }
 strong,b,mark{
@@ -66,6 +20,13 @@ img{
   border:none;
   font-style:italic;
 }
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /**
  * Set the colour for highlighted text
  */
@@ -75,9 +36,213 @@ img{
 ::moz-selection {
   background-color: #56c2c5;
 }
-
+/**
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=h3` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+h1,.h1,h2,.h2,h3,.h3,
+h4,.h4,h5,.h5,h6,.h6 {
+  text-rendering: optimizelegibility;
+  font-weight:normal;
+  margin-top: 0;
+  margin-bottom: 36px;
+}
+h1,.h1{
+  font-size: 78px;
+  line-height: 76px;
+  margin: 36px auto 68px;
+}
+h2,.h2{
+  font-size: 36px;
+  line-height: 34px;
+}
+h3,.h3{
+  font-size: 26px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 4px;
+}
+h4,.h4{
+  font-size: 20px;
+  line-height: 18px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 36px;
+}
+a {
+  color: #fff;
+  -webkit-transition:color .2s linear, background .2s linear;
+	-moz-transition:color .2s linear, background .2s linear;
+	transition:color .2s linear, background .2s linear;
+	display: inline-block;
+	padding: 2px 6px;
+}
+  a:hover,
+  a:active,
+  a:focus{
+    text-decoration:none;
+    background-color: #f88684;
+/*     color: #27010e; */
+  }
+  a:active,
+  a:focus{
+    outline:none;
+  }
+  /* Visually show the 'click' */
+  a:active {
+    position: relative;
+    top: 1px;
+  } 
+ul, 
+ol {
+  margin-top: 0;
+  margin-bottom: 36px;
+  padding-left: 36px;
+}
+li{
+  line-height:36px;
+  > ul,
+  > ol{
+    margin-bottom:0;
+  }
+}
 /*------------------------------------*\
-    quotes
+    layout
+\*------------------------------------*/
+html {
+  /* base font size = 16px with 18px line height */
+  font: 1em/1.3em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height:100%;
+  color: #fff;
+  -webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: #fff;
+	background: #000;
+	padding: 16px;
+}
+/* extra padding on larger screens */
+@media (min-width: 661px) {
+  html {
+    padding: 28px 28px 68px;
+  }
+}
+body {
+  margin: 0 auto;
+  max-width: 640px;
+}
+/* center text on larger screens */
+@media (min-width: 481px) {
+  body {
+    text-align: center;
+  }
+}
+video.background-video {
+  position: fixed; 
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto; 
+  z-index: -100;
+  background: url(background.png) no-repeat;
+  background-size: cover;
+}
+/*------------------------------------*\
+   logo
+\*------------------------------------*/
+header {
+  margin-bottom: 36px;
+}
+/* only have larger header text on larger screens */
+@media (min-width: 481px) {
+  header {
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+.logo {
+  text-indent: -9999px;
+  background: url(/logo.png) no-repeat scroll 0 0;
+  background-size: 340px 45px;
+  width: 450px;
+  z-index: 1;
+}
+/* make the logo bigger on larger screens */
+@media (min-width: 481px) {
+  .logo{
+    background-size: 450px 60px;
+  }
+}
+.mountain {
+  background: url(/mountain.png) no-repeat scroll 0 0;
+  background-size: 690px 462px;
+  position: absolute;
+  top: 81px;
+  left: 50%;
+  width: 690px;
+  margin-left: -368px;
+  height: 462px;
+  z-index: 2;
+}
+/*------------------------------------*\
+   featured content
+\*------------------------------------*/
+.featured {
+  margin: 0 auto 68px;
+  z-index: 3;
+  position: relative;
+}
+  .featured span {
+    color: #27010e;
+    background-color: #56c2c5;
+  }
+/*------------------------------------*\
+   social media buttons
+\*------------------------------------*/
+.social-media {
+  padding: 0;
+  margin: 0 0 58px;
+  list-style: none;
+  z-index: 4;
+  position: relative;
+}
+  .social-media li {
+    display: inline-block;
+  }
+.btn {
+  padding: 10px;
+  text-transform: lowercase;
+  text-align: center;
+  display: inline-block;
+  color:#fff;
+  background: transparent;
+  font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-right: -8px;
+}
+/* make btn text bigger on larger screens */
+@media (min-width: 481px) {
+  .btn {
+    min-width: 100px;
+    font-size: 26px; /* same as h3 */
+    line-height: 24px;
+  }
+}
+  .btn:hover,
+  .btn:focus,
+  .btn:active {
+    background-color: #f88684;
+  }
+  /* make sure the text and icon are on two lines */
+  .btn i,
+  .btn i,
+  .btn i {
+    display: block;
+  }
+/*------------------------------------*\
+   reviews
 \*------------------------------------*/
 /**
  * Big up @boblet: html5doctor.com/blockquote-q-cite
@@ -88,197 +253,21 @@ q{ quotes:"“" "”" "“" "”"; font-style: normal; display: block; }
   q q:before{ content: "“"; content: open-quote; }
   q q:after{ content: "”"; content: close-quote; }
 
-blockquote{ quotes: "“" "”"; }
-  blockquote p:before{ content: "“"; content: open-quote; }
-  blockquote p:after{ content: ""; content: no-close-quote; }
-  blockquote p:last-of-type:after{ content: "”"; content: close-quote; }
-
-
-/**
- * 
-   <blockquote>
-       <p>Insanity: doing the same thing over and over again and expecting
-       different results.</p>
-       <b class=source>Albert Einstein</b>
-   </blockquote>
- * 
- */
-blockquote{
-  /**
-    * .4em is roughly equal to the width of the opening “ that we wish to hang.
-    */
-  text-indent:-0.4em;
- 
-  p:last-of-type{
-    margin-bottom:0;
-  }
-}
 .source{
   display:inline-block;
   text-indent:0;
-  /* float: right; */
-  /*
-color: #27010e;
-  background-color: #fab0af;
-*/
   font-size: 16px;
 }
   .source:before{
     content:"—" " ";
   }
-
 /*------------------------------------*\
-    headings
+   footer
 \*------------------------------------*/
-/**
- * When we define a heading we also define a corresponding class to go with it.
- * This allows us to apply, say, `class=h3` to a `h3`; a double-stranded
- * heading hierarchy.
- *
- * Ratio calculated with: http://www.pearsonified.com/typography/
- * For optimal legibility.
- */
-h1,.h1,h2,.h2,h3,.h3,
-h4,.h4,h5,.h5,h6,.h6 {
-  text-rendering: optimizelegibility;
-  font-weight:normal;
-  margin-bottom: 36px;
-}
-h1,.h1{
-  font-size: 2.626em;     /* 42px */
-  font-size: 2.625rem;
-  line-height: 1em;
-  text-transform: uppercase;
-  margin: 0.5em auto 68px;
-  text-indent: -9999em;
-  background: url(/logo.png) no-repeat scroll 0 0;
-  background-size: 450px 60px;
-  width: 450px;
-}
-@media (min-width: 481px) {
-  h1,.h1{
-    font-size: 3.75em; /* 60px */
-    font-size: 3.75rem;
-  }
-}
-@media (min-width: 661px) {
-  h1,.h1{
-    font-size: 4.875em; /* 78px */
-    font-size: 4.875rem;
-  }
-}
-h2,.h2{
-  font-size: 2em;     /* 32px */
-  font-size: 2rem;
-  line-height: 1.2em;
-}
-h3,.h3{
-  font-size: 1.625em; /* 36px */
-  font-size: 1.625rem;
-  line-height: 1.3em;
-}
-h4,.h4{
-  font-size: 1.25em;  /* 20px */
-  font-size: 1.25rem;
-  line-height: 1em;
-}
-h5,.h5{
-  font-size: 1.125em; /* 18px */
-  font-size: 1.125rem;
-  line-height: 1em;
-}
-h6,.h6{
-  font-size: 1em;     /* 16px */
-  font-size: 1rem;
-  line-height: 1em;
-}
-h1 small,
-h2 small {
-  font-weight: normal;
-  color: hsl(0,0%,58%);
-}
-
-p,
-article > footer {
-  margin-bottom: 36px;
-}
-
-.hsmall {
-  font-size: 1.626em; /* 26px */
-  font-size: 1.626rem;
-  line-height: 1.625em;
-  text-transform: uppercase;
-  margin-bottom: 0;
+footer {
+  margin: 0 auto;
+  padding-top: 36px;
   font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-/*------------------------------------*\
-    links
-\*------------------------------------*/
-/**
- * Sometimes, particularly on larger projects, it is useful to scope link
- * styling only to anchors which have `href` attributes.
- */
-a{
-  color: #27010e;
-  background-color: #56c2c5;
-  -webkit-transition:color .2s linear, background .2s linear;
-	-moz-transition:color .2s linear, background .2s linear;
-	transition:color .2s linear, background .2s linear;
-}
-  a:hover,
-  a:active,
-  a:focus{
-    text-decoration:none;
-    background-color: #259da0;
-  }
-  a:active,
-  a:focus{
-    outline:none;
-  }
-  /**
-    * Visually show the 'click'
-    */
-  a:active {
-    position: relative;
-    top: 1px;
-  }
-  /**
-    * Make the visited state nicer
-    */
-  /*
-a:visited {
-    background-color: #fab0af;
-  }
-*/
-
-  
-/*------------------------------------*\
-    lists
-\*------------------------------------*/
-ul, 
-ol {
-  margin-bottom: 36px;
-  padding-left: 36px;
-}
-/**
- * Remove vertical spacing from nested lists.
- */
-li{
-  line-height:36px;
-  > ul,
-  > ol{
-    margin-bottom:0;
-  }
-}
-/*------------------------------------*\
-    images
-\*------------------------------------*/
-img {
-  max-width: 100%;
-  height: auto;
-}
-svg:not(:root) {
-  overflow: hidden;
 }
 /*------------------------------------*\
    helper
@@ -343,84 +332,6 @@ svg:not(:root) {
   margin: 0;
 }
 /*------------------------------------*\
-    layout
-\*------------------------------------*/
-
-
-video#bgvid {
-  position: fixed; right: 0; bottom: 0;
-  min-width: 100%; min-height: 100%;
-  width: auto; height: auto; z-index: -100;
-  background: url(background.png) no-repeat;
-  background-size: cover;
-}
-
-header {
-  margin-bottom: 36px;
-}
-@media (min-width: 481px) {
-  header {
-    font-size: 28px;
-    line-height: 38px;
-  }
-}
-
-  header ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-    header li {
-      display: inline-block;
-    }
-
-.featured {
-  margin: 0 auto 68px;
-}
-  .featured span {
-    color: #27010e;
-    background-color: #56c2c5;
-  }
-  
-.btn-wrapper {
-  margin-bottom: 58px;
-}
-  .btn {
-    padding: 10px;
-    text-transform: lowercase;
-    text-align: center;
-    display: inline-block;
-    color:#fff;
-    background: transparent;
-    font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-right: -4px;
-  }
-  @media (min-width: 481px) {
-    .btn {
-      min-width: 100px;
-      font-size: 1.6em;
-      font-size: 1.6rem;
-      line-height: 1.2em;
-    }
-  }
-    .btn:hover,
-    .btn:focus,
-    .btn:active {
-      background-color: #f88684;
-    }
-    .btn i,
-    .btn i,
-    .btn i {
-      display: block;
-    }
-
-footer {
-  margin: 0 auto;
-  padding-top: 36px;
-  font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-  
-/*------------------------------------*\
    print
 \*------------------------------------*/
 @media print {
@@ -435,6 +346,10 @@ footer {
   @page  {
     margin: 0.5cm;
   }
+  .logo {
+    background: none;
+    text-indent: 0;
+  }
   h2,
   h3 {
     orphans: 3;
@@ -445,33 +360,12 @@ footer {
     orphans: 3;
     widows: 3;
   }
-  pre,
-  blockquote {
-    border: 1px solid hsl(0,0%,58%);
-    page-break-inside: avoid;
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
   a,
   a:visited {
     text-decoration: underline;
   }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
   img {
     max-width: 100% !important;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-  tr {
     page-break-inside: avoid;
   }
 }
