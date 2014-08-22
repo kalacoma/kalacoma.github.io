@@ -51,7 +51,7 @@ h4,.h4,h5,.h5,h6,.h6 {
 h1,.h1{
   font-size: 78px;
   line-height: 76px;
-  margin: 36px auto 68px;
+  margin: 0 auto 68px;
 }
 h2,.h2{
   font-size: 36px;
@@ -74,9 +74,10 @@ p {
 }
 a {
   color: #fff;
-  -webkit-transition:color .2s linear, background .2s linear;
-	-moz-transition:color .2s linear, background .2s linear;
-	transition:color .2s linear, background .2s linear;
+  /* transition all the things */
+  -webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
 	display: inline-block;
 	padding: 2px 6px;
 }
@@ -154,7 +155,11 @@ video.background-video {
    logo
 \*------------------------------------*/
 header {
+  margin-top: 46px;
   margin-bottom: 36px;
+  position: relative;
+  /* use vh to make it relative to the browser height */
+  height: 80vh;
 }
 /* only have larger header text on larger screens */
 @media (min-width: 481px) {
@@ -180,7 +185,7 @@ header {
   background: url(/mountain.png) no-repeat scroll 0 0;
   background-size: 690px 462px;
   position: absolute;
-  top: 81px;
+  top: 18px;
   left: 50%;
   width: 690px;
   margin-left: -368px;
@@ -199,12 +204,21 @@ header {
     color: #27010e;
     background-color: #56c2c5;
   }
+.featured--audio {
+  opacity: 0.3;
+  -webkit-transition:opacity .2s linear;
+	-moz-transition:opacity .2s linear;
+	transition:opacity .2s linear;
+}
+  .featured--audio:hover {
+    opacity: 1;
+  }
 /*------------------------------------*\
    social media buttons
 \*------------------------------------*/
 .social-media {
   padding: 0;
-  margin: 0 0 58px;
+  margin: 0 0 68px;
   list-style: none;
   z-index: 4;
   position: relative;
@@ -221,6 +235,7 @@ header {
   background: transparent;
   font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-right: -8px;
+  opacity: 0.8;
 }
 /* make btn text bigger on larger screens */
 @media (min-width: 481px) {
@@ -234,6 +249,7 @@ header {
   .btn:focus,
   .btn:active {
     background-color: #f88684;
+    opacity: 1;
   }
   /* make sure the text and icon are on two lines */
   .btn i,
