@@ -87,7 +87,6 @@ a {
   a:focus{
     text-decoration:none;
     background-color: #f88684;
-/*     color: #27010e; */
   }
   a:active,
   a:focus{
@@ -217,31 +216,35 @@ header {
 }
 .featured--gig {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 32px;
   margin-bottom: 46px;
 }
+  .featured--gig p {
+    margin: 0;
+  }
   .featured--gig span {
     color: #111;
     background-color: #56c2c5;
     display: inline-block;
     padding: 0px 6px;
   }
-  /*
-  @media (min-width: 481px) {
-    .featured--gig span {
-      font-size: 36px;
-      line-height: 34px;
-      text-transform: uppercase;
-      font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
+  .featured--gig .gig--date,
+  .featured--gig .gig--venue {
+    font-size: 36px;
+    line-height: 46px;
+    text-transform: uppercase;
+    font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
-  */
-  .featured--gig span a {
+  .featured--gig .gig--venue {
+    background-color: #f88684;
+  }
+  .featured--gig .gig--address,
+  .featured--gig .gig--with {
+    line-height: 28px;
+  }
+  .featured--gig a {
     color: #111;
     padding: 0;
-  }
-  .featured--gig p {
-    margin: 0;
   }
   
 .featured--audio {
