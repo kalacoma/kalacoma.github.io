@@ -126,7 +126,7 @@ html {
 /* mountain image on small screens */
 @media (max-width: 660px) {
   html {
-    background: #000 url(/background.png) no-repeat 100% 0 fixed;
+    background: #000 url(/background--small.png) no-repeat 100% 0 fixed;
     background-size: cover;
   }
 }
@@ -177,7 +177,7 @@ header {
 /* on really small screens set some padding */
 @media (max-width: 660px) {
   header {
-    padding: 0 16px;
+    padding: 0 12px;
     overflow: hidden;
   }
 }
