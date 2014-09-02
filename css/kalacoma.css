@@ -2,7 +2,7 @@
  * A more considered reset; more of a restart... 
  * As per: csswizardry.com/2011/10/reset-restarted
  */
-article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,video{
   display:block;
 }
 strong,b,mark{
@@ -26,6 +26,7 @@ img{
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 /**
  * Set the colour for highlighted text
@@ -121,7 +122,14 @@ html {
   -webkit-overflow-scrolling: touch;
 	-webkit-tap-highlight-color: #fff;
 	background: #000;
-	padding: 16px;
+	padding: 0;
+}
+/* mountain image on small screens */
+@media (max-width: 660px) {
+  html {
+    background: #000 url(/background.png) no-repeat 100% 0 fixed;
+    background-size: cover;
+  }
 }
 /* extra padding on larger screens */
 @media (min-width: 661px) {
@@ -132,13 +140,9 @@ html {
 body {
   margin: 0 auto;
   max-width: 640px;
+  text-align: center;
 }
-/* center text on larger screens */
-@media (min-width: 481px) {
-  body {
-    text-align: center;
-  }
-}
+
 video.background-video {
   position: fixed; 
   right: 0; 
@@ -148,37 +152,48 @@ video.background-video {
   width: auto; 
   height: auto; 
   z-index: -100;
-  background: url(background.png) no-repeat;
+  background: url(/background.png) no-repeat;
   background-size: cover;
+}
+@media (max-width: 660px) {
+  video.background-video {
+    display: none;
+  }
 }
 /*------------------------------------*\
    logo
 \*------------------------------------*/
 header {
   margin-top: 46px;
-  margin-bottom: 36px;
   position: relative;
-  /* use vh to make it relative to the browser height */
-  height: 80vh;
 }
 /* only have larger header text on larger screens */
 @media (min-width: 481px) {
   header {
     font-size: 28px;
     line-height: 38px;
+    margin-bottom: 36px;
+  }
+}
+/* on really small screens set some padding */
+@media (max-width: 660px) {
+  header {
+    padding: 0 16px;
+    overflow: hidden;
   }
 }
 .logo {
   text-indent: -9999px;
   background: url(/logo.png) no-repeat scroll 0 0;
-  background-size: 340px 45px;
-  width: 450px;
+  background-size: 290px 36px;
+  width: 290px;
   z-index: 1;
 }
 /* make the logo bigger on larger screens */
 @media (min-width: 481px) {
   .logo{
     background-size: 450px 60px;
+    width: 450px;
   }
 }
 .mountain {
@@ -200,12 +215,37 @@ header {
   z-index: 3;
   position: relative;
 }
-  .featured span {
-    color: #27010e;
+.featured--gig {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 46px;
+}
+  .featured--gig span {
+    color: #111;
     background-color: #56c2c5;
+    display: inline-block;
+    padding: 0px 6px;
   }
+  /*
+  @media (min-width: 481px) {
+    .featured--gig span {
+      font-size: 36px;
+      line-height: 34px;
+      text-transform: uppercase;
+      font-family: "Amatic SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+  }
+  */
+  .featured--gig span a {
+    color: #111;
+    padding: 0;
+  }
+  .featured--gig p {
+    margin: 0;
+  }
+  
 .featured--audio {
-  opacity: 0.3;
+  opacity: 0.6;
   -webkit-transition:opacity .2s linear;
 	-moz-transition:opacity .2s linear;
 	transition:opacity .2s linear;
@@ -229,7 +269,6 @@ header {
 .btn {
   padding: 10px;
   text-transform: lowercase;
-  text-align: center;
   display: inline-block;
   color:#fff;
   background: transparent;
@@ -257,9 +296,26 @@ header {
   .btn i {
     display: block;
   }
+
+/*------------------------------------*\
+  main content
+\*------------------------------------*/
+
+@media (max-width: 660px) {
+  .main-content {
+    background: #000;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 46px 16px;
+  }
+}
 /*------------------------------------*\
    reviews
 \*------------------------------------*/
+.reviews {
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /**
  * Big up @boblet: html5doctor.com/blockquote-q-cite
  */
