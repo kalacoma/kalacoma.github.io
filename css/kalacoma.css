@@ -115,7 +115,7 @@ li{
 \*------------------------------------*/
 html {
   /* base font size = 16px with 18px line height */
-  font: 1em/1.3em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1em/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height:100%;
   color: #fff;
   -webkit-overflow-scrolling: touch;
@@ -264,7 +264,7 @@ header {
   }
 .btn {
   padding: 10px;
-  text-transform: lowercase;
+  text-transform: uppercase;
   display: inline-block;
   color:#fff;
   background: transparent;
@@ -276,8 +276,8 @@ header {
 @media (min-width: 481px) {
   .btn {
     min-width: 100px;
-    font-size: 26px; /* same as h3 */
-    line-height: 24px;
+    font-size: 18px; /* same as h3 */
+    line-height: 34px;
   }
 }
   .btn:hover,
