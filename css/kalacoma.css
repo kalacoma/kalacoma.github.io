@@ -144,7 +144,7 @@ video.background-video {
   width: auto; 
   height: auto; 
   z-index: -100;
-  background: url(/background.png) no-repeat;
+  background: url(/video-background.png) no-repeat;
   background-size: cover;
 }
 @media (max-width: 660px) {
