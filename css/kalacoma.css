@@ -177,15 +177,17 @@ header {
 .logo {
   text-indent: -9999px;
   background: url(/logo.png) no-repeat scroll 0 0;
-  background-size: 290px 36px;
+  background-size: 290px 180px;
   width: 290px;
+  height: 180px;
   z-index: 1;
 }
 /* make the logo bigger on larger screens */
 @media (min-width: 481px) {
   .logo{
-    background-size: 450px 60px;
-    width: 450px;
+    background-size: 403px 244px;
+    width: 403px;
+    height: 244px;
   }
 }
 .mountain {
